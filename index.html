@@ -2,46 +2,63 @@
 <html lang="he">
 <head>
   <meta charset="UTF-8">
-  <title>גן הצמחים 🌿</title>
+  <title>חנות הצמחים 🌿</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
 
 <header>
-  <h1>🌿 גן הצמחים</h1>
+  <div class="logo">🌿 PlantShop</div>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
   <nav>
-    <a href="index.html">בית</a>
-    <a href="plants.html">צמחים</a>
-    <a href="about.html">אודות</a>
+    <a href="index.html">חנות</a>
+    <a href="cart.html">🛒 סל קניות</a>
   </nav>
 </header>
 
 <div class="container">
-  <div class="hero">
-    <div class="hero-box">
-      <h2>ברוכים הבאים לגן הירוק</h2>
-      <p>
-        אתר שמוקדש לאוהבי צמחים, גידול ביתי,
-        וטיפים לצמחים נדירים ויפים.
-      </p>
-      <a href="plants.html">
-        <button>לצפייה בצמחים</button>
-      </a>
+  <div class="grid">
+
+    <div class="card">
+      <img src="images/monstera.jpg">
+      <div class="card-content">
+        <h3>מונסטרה</h3>
+        <div class="price">120 ₪</div>
+        <button onclick="showDetails(
+          'מונסטרה',
+          120,
+          'אוהבת אור חזק ללא שמש ישירה והשקיה מתונה'
+        )">לפרטים</button>
+      </div>
     </div>
 
-    <div class="hero-box">
-      <h3>למה האתר הזה?</h3>
-      <p>
-        כי לכל צמח מגיע טיפול נכון,
-        ולכל חובב צמחים מגיע ידע מסודר 🌱
-      </p>
+    <div class="card">
+      <img src="images/philodendron.jpg">
+      <div class="card-content">
+        <h3>פילודנדרון</h3>
+        <div class="price">95 ₪</div>
+        <button onclick="showDetails(
+          'פילודנדרון',
+          95,
+          'צמח חזק שמתאים גם למתחילים'
+        )">לפרטים</button>
+      </div>
     </div>
+
   </div>
 </div>
 
-<footer>
-  © 2026 גן הצמחים
-</footer>
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h2 id="modalTitle"></h2>
+    <p id="modalInfo"></p>
+    <p><strong id="modalPrice"></strong></p>
+    <button id="addBtn">הוסף לסל</button>
+    <button onclick="closeModal()" style="margin-top:10px;background:#ccc;color:black;">סגור</button>
+  </div>
+</div>
 
 </body>
 </html>
