@@ -1,3 +1,9 @@
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function toggleMenu() {
+  document.querySelector("nav").classList.toggle("open");
+}
+
 // פונקציה להציג פרטי צמח במודאל
 function showDetails(name, price, info) {
   document.getElementById('modalTitle').innerText = name;
@@ -9,6 +15,13 @@ function showDetails(name, price, info) {
 // פונקציה לסגירת המודאל
 function closeModal() {
   document.getElementById('modal').style.display = 'none';
+}
+
+function addToCart(name, price) {
+  cart.push({ name, price });
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert("הצמח נוסף לסל 🌿");
+  closeModal();
 }
 
 // פונקציה לחיפוש צמחים
