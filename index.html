@@ -16,26 +16,16 @@
     <a href="cart.html">🛒 סל קניות</a>
   </nav>
 </header>
-<input
-  type="text"
-  id="search"
-  placeholder="🔍 חפש צמח..."
-  style="
-    width:100%;
-    padding:15px;
-    margin-bottom:30px;
-    border-radius:10px;
-    border:1px solid #ccc;
-    font-size:16px;
-  "
-  onkeyup="searchPlants()"
-/>
 
 <div class="container">
+
+  <!-- שדה חיפוש -->
+  <input type="text" id="searchInput" placeholder="חפש צמח..." onkeyup="searchPlants()">
+
   <div class="grid">
 
     <div class="card">
-    <img src="images/monstera.jpg" alt="monstera" width="300">
+      <img src="images/monstera.jpg" alt="monstera" width="300">
       <div class="card-content">
         <h3>מונסטרה</h3>
         <div class="price">120 ₪</div>
@@ -48,7 +38,7 @@
     </div>
 
     <div class="card">
-      <img src="images/alocasia.jpg">
+      <img src="images/philodendron.jpg" alt="philodendron" width="300">
       <div class="card-content">
         <h3>פילודנדרון</h3>
         <div class="price">95 ₪</div>
