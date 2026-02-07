@@ -23,11 +23,15 @@ function addToCart(name, price) {
   closeModal();
 }
 function searchPlants() {
-  const value = document.getElementById("search").value.toLowerCase();
-  const cards = document.querySelectorAll(".card");
+  const input = document.getElementById('searchInput').value.toLowerCase();
+  const cards = document.querySelectorAll('.card');
 
   cards.forEach(card => {
-    const name = card.querySelector("h3").innerText.toLowerCase();
-    card.style.display = name.includes(value) ? "block" : "none";
+    const plantName = card.querySelector('h3').innerText.toLowerCase();
+    if (plantName.includes(input)) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
   });
 }
