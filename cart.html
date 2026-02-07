@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>סל קניות</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">🛒 סל הקניות</div>
+  <nav>
+    <a href="index.html">חזרה לחנות</a>
+  </nav>
+</header>
+
+<div class="container">
+  <ul id="cartList"></ul>
+  <h3 id="total"></h3>
+</div>
+
+<script>
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let total = 0;
+  const list = document.getElementById("cartList");
+
+  cart.forEach(item => {
+    total += item.price;
+    const li = document.createElement("li");
+    li.innerText = item.name + " - " + item.price + " ₪";
+    list.appendChild(li);
+  });
+
+  document.getElementById("total").innerText = "סה״כ: " + total + " ₪";
+</script>
+
+</body>
+</html>
